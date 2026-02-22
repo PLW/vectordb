@@ -1,0 +1,21 @@
+Define the index storage format as immutable segments 
+with background compaction.
+
+Requirements:
+  - Upserts and deletes supported
+  - Deletes visible in <=4s
+  - Rebuilds should not block queries
+
+Specify:
+  - segment file layout,
+  - in-memory structures,
+  - tombstones,
+  - manifest,
+  - compaction triggers.
+
+Layout format: all data items in each file should be specified as
+  <NAME> <TYPE>
+  For example: `segid u64, tenant_id u64, shard_id u64 score f16`
+
+Provide a state machine for "segment lifecycle".
+
