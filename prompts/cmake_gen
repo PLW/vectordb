@@ -1,0 +1,11 @@
+
+We have a github repo organized into subdirectories :
+  - src     for holding cpp+17 source code
+  - prompts for holding GPT 5.2 code prompts
+  - build   for holding cmake output binaries compiled from src
+  - tests   for holding GPT 5.2 generated gtest unit tests
+  - tools   for holding generator tools
+We need a cmake skeleton for automating the build into build and tests
+of the source code in src that was generated from prompts. The build
+system should auto-discover any new directories and source files.
+
